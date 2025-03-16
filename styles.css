@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+h1 {
+  color: #255F38;
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: #255F38;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1F7D53;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.timer-container {
+  margin: 15px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.timer {
+  color: #18230F;
+}
+
+.card-container {
+  perspective: 1000px;
+  height: 300px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card-front {
+  background: linear-gradient(270deg, #1F7D53 0%, #18230F 100%);
+  color: white;
+}
+
+.card-back {
+  background-color: white;
+  border: 5px solid #18230F;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.question-text {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.question-number {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.settings-panel {
+  margin-top: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.settings-panel h2 {
+  margin-bottom: 15px;
+  color: #18230F;
+}
+
+.setting-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .card-container {
+      height: 250px;
+  }
+  
+  .question-text {
+      font-size: 20px;
+  }
+}
